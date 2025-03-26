@@ -32,7 +32,9 @@ exports.loginUser = async (req, res) => {
         }
 
         req.session.user = { id: user.id, name: user.name, email: user.email };
-        res.json({ message: 'Login successful', user: req.session.user });
+        // res.json({ message: 'Login successful', user: req.session.user });
+        res.redirect('/home', { user: req.session.user });
+
 
     } catch (err) {
         res.status(500).json({ error: 'Error logging in' });
