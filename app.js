@@ -50,6 +50,9 @@ app.use('/', indexRoutes);
 app.use('/auth', authRoutes);
 app.use('/', homeRoutes);
 app.use('/', profileRoutes);
+const bookRoutes = require("./routes/bookRoutes");
+app.use("/", bookRoutes);
+
 
 
 //for db connection
